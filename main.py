@@ -22,9 +22,9 @@ app = FastAPI(lifespan=lifespan)
 
 #app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-@app.get("/")
+'''@app.get("/")
 def greet():
-    return {"message": "Hello!, RONIT!"}
+    return {"message": "Hello!, RONIT!"}'''
 
 #columns that the user will see and interact with
 #pydantic model(validation) for the input data
