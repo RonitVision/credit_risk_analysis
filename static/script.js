@@ -1,5 +1,6 @@
 // Point this at your deployed FastAPI service, e.g. https://credit-risk-api.onrender.com
-const API_URL = window.API_URL || "http://127.0.0.1:8000";
+
+const API_URL = window.API_URL || "";
 
 const $ = (id) => document.getElementById(id);
 const form = $("form"), btn = $("submit"), errorBox = $("error");
