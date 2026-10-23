@@ -7,3 +7,4 @@ numpy==1.26.4
 # IMPORTANT: pin this to the exact version you trained the model with
 # (run `pip show scikit-learn` locally). Add xgboost/lightgbm here too if your pipeline uses them.
 scikit-learn==1.5.2
+xgboost==3.4.1
