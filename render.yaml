@@ -1,29 +1,8 @@
-# Render Blueprint: deploys the FastAPI backend and the static frontend together.
-# Expected repo layout:
-#   render.yaml
-#   backend/   -> main.py, credit_risk_model.pkl, best_threshold.pkl, requirements.txt, runtime.txt
-#   frontend/  -> index.html, style.css, script.js
 services:
   - type: web
-    name: credit-risk-api
+    name: credit-ledger
     runtime: python
     plan: free
-    rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.9
-
-  - type: web
-    name: credit-risk-ui
-    runtime: static
-    plan: free
-    rootDir: frontend
-    buildCommand: echo "static site, no build"
-    staticPublishPath: .
-    headers:
-      - path: /*
-        name: X-Content-Type-Options
-        value: nosniff
+    autoDeploy: true
